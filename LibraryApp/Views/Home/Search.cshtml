@@ -1,13 +1,13 @@
-﻿@{
-    Layout = null;
+﻿@using System.Linq
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Search</title>
-</head>
-<body>
-</body>
-</html>
+@Html.Partial("_Search")
 
+<div class="container">
+	<div class = "row">
+		@Html.Partial("_Books")
+	</div>
+</div>
