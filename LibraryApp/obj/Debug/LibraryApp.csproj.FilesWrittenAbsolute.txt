@@ -22,3 +22,4 @@
 /Users/kushtrimabdiu/Projects/Library-App/LibraryApp/bin/System.Web.WebPages.dll
 /Users/kushtrimabdiu/Projects/Library-App/LibraryApp/bin/System.Web.WebPages.Razor.dll
 /Users/kushtrimabdiu/Projects/Library-App/LibraryApp/bin/System.Web.Mvc.dll
+/Users/kushtrimabdiu/Projects/Library-App/LibraryApp/bin/Newtonsoft.Json.dll
