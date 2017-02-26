@@ -1,1 +1,22 @@
-﻿
+﻿<div class="col-md-12 col-sm-12">
+	@foreach(var book in Model.books){
+		<div class = "col-md-3 col-sm-12 card thumb">
+			 <div id = 'book' class = 'thumbnail'>
+    			<img src = '../Content/images/book_cover_2.png' class = "picture" />
+				<div class = 'caption'>
+					<center><h4>@book.title</h4></center>
+					<div class = "col-md-12 col-sm-12">
+						<div class = ""><h5>Author: @book.author</h5></div>
+					</div>
+					<div class = "col-md-12 col-sm-12">
+						<div class = ""><h5>Price: @book.price</h5></div>
+						<div class = ""><h5>In Stock: @book.inStock</h5></div>
+					</div>
+					<div class = "col-md-12 col-sm-12">
+						<button class = "btn btn-default">Add To Basket</button>
+					</div>
+				</div>
+    		</div>
+		</div>
+	}
+</div>
