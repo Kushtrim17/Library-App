@@ -1,0 +1,15 @@
+﻿@using(Html.BeginForm("Search", "Home", FormMethod.Get))
+{
+	<div class = "row">
+	  <div class = "col-md-offset-2 col-md-8">
+		<form method = "GET">
+		    <div class = "input-group">
+		      <input type = "text" class = "form-control" placeholder = "Search for..." name = "search">
+		      <span class = "input-group-btn">
+		        <button class = "btn btn-default" type = "submit">Search</button>
+		      </span>
+		    </div><!-- /input-group -->
+		</form>
+	  </div><!-- /.col-lg-6 -->
+	</div><!-- /.row -->
+}
