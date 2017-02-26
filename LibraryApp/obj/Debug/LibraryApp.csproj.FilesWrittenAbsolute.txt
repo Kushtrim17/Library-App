@@ -1,0 +1,12 @@
+/Users/kushtrimabdiu/Projects/LibraryApp/LibraryApp/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/kushtrimabdiu/Projects/LibraryApp/LibraryApp/bin/LibraryApp.dll.mdb
+/Users/kushtrimabdiu/Projects/LibraryApp/LibraryApp/bin/LibraryApp.dll
+/Users/kushtrimabdiu/Projects/LibraryApp/LibraryApp/obj/Debug/LibraryApp.dll
+/Users/kushtrimabdiu/Projects/LibraryApp/LibraryApp/obj/Debug/LibraryApp.dll.mdb
+/Users/kushtrimabdiu/Projects/LibraryApp/LibraryApp/bin/System.Web.Razor.dll
+/Users/kushtrimabdiu/Projects/LibraryApp/LibraryApp/bin/Microsoft.Web.Infrastructure.dll
+/Users/kushtrimabdiu/Projects/LibraryApp/LibraryApp/bin/System.Web.Helpers.dll
+/Users/kushtrimabdiu/Projects/LibraryApp/LibraryApp/bin/System.Web.WebPages.Deployment.dll
+/Users/kushtrimabdiu/Projects/LibraryApp/LibraryApp/bin/System.Web.WebPages.dll
+/Users/kushtrimabdiu/Projects/LibraryApp/LibraryApp/bin/System.Web.WebPages.Razor.dll
+/Users/kushtrimabdiu/Projects/LibraryApp/LibraryApp/bin/System.Web.Mvc.dll
