@@ -1,8 +1,12 @@
-.container
-{
-    margin-top: 10px;
-}
 #book
 {
 	height:360px;
+}
+.checkoutBtn
+{
+ 	margin: 7px;
+}
+.container
+{
+    margin-top: 10px;
 }
