@@ -22,7 +22,6 @@ namespace LibraryApp
 		{
 			try {
 				var webClient = new WebClient();
-				Console.WriteLine("correct");
 				return webClient.DownloadString(API_URL);
 			}
 			catch (Exception ex) {
