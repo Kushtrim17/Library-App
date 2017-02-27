@@ -22,10 +22,13 @@ namespace LibraryApp
 		{
 			try {
 				var webClient = new WebClient();
+				Console.WriteLine("correct");
 				return webClient.DownloadString(API_URL);
 			}
 			catch (Exception ex) {
-				return "error";
+				
+				Console.WriteLine("THINGS WENT WRONG..........::" + ex);
+				return "error :" + ex;
 			}
 		}
 	}
