@@ -19,5 +19,20 @@ namespace Kushtrim.Models
 		public string price;
 
 		public string inStock;
+
+		/**
+		 * isSelectedBook - checks if the current book is part of the search
+		 * if the title or the author mathces the searchTerm we return true
+		 * @param searchTerm| string
+		 * @return bool
+		 */
+		public bool isSelectedBook(string searchTerm)
+		{
+			if (author.ToLower().Contains(searchTerm.ToLower()) || title.ToLower().Contains(searchTerm.ToLower())) {
+				return true;
+			}
+
+			return false;
+		}
 	}
 }
