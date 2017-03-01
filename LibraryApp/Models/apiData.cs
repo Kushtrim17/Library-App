@@ -8,7 +8,7 @@ namespace LibraryApp
 		/**
 		 *  the API endpoint
 		 */
-		private string API_URL = "http://www.contribe.se/arbetsprov-net/books.json";
+		private const string API_URL = "http://www.contribe.se/arbetsprov-net/books.json";
 
 		public apiData() {
 			
@@ -25,8 +25,6 @@ namespace LibraryApp
 				return webClient.DownloadString(API_URL);
 			}
 			catch (Exception ex) {
-				
-				Console.WriteLine("THINGS WENT WRONG..........::" + ex);
 				return "error :" + ex;
 			}
 		}
