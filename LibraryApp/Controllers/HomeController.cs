@@ -18,29 +18,29 @@ namespace LibraryApp.Controllers
 			var books = JsonConvert.DeserializeObject<Books>(jsonBooks);
 
 			//if the search is empty then we dont filter
-			if (searchTerm.Length > 0)
-			{
+			if (searchTerm.Length > 0) {
 				//after we got all the books from the API we filter out the ones 
 				//that dont match the searched term
-				foreach (Book book in books.getAllBooks().ToList())
-				{
-					if (!book.isSelectedBook(searchTerm)) {
-						books.removeBook(book);
-					}
-				}
+				books.filterBooks(searchTerm);
 			}
 
 			return View(books);
 		}
 
-		public RedirectResult AddToCard(string bookTitle, string bookAuthor, int bookinStock)
+		public RedirectResult AddToCard(string bookTitle, string bookAuthor, string bookPrice, int bookinStock)
 		{
-			if (bookinStock > 1) {
-				//we can buy the book 
+			if (bookinStock > 0) {
+				Book book = new Book();
+				book.title = bookTitle;
+				book.author = bookAuthor;
+				book.price = bookPrice;
+				book.inStock = bookinStock;
+
+				SessionManager.Save<Book>(book);
+
 				return new RedirectResult("/Home/AddedToCard?title=" + bookTitle);
 			}
 			else {
-				//we should redirect to the view that handles
 				return new RedirectResult("/Home/OutOfStock?title=" + bookTitle);
 			}
 
