@@ -16,9 +16,14 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <ul class="nav navbar-nav navbar-right">
-			<button class="btn btn-primary checkoutBtn" type="button">
-			  Checkout <span class="badge">@Session["nrOfItems"]</span>
-			</button>
+			@if (!Request.RawUrl.ToString().Contains("Checkout")  && Session["shoppingCard"] != null) {
+				<a href = "/Checkout" class="btn btn-primary checkoutBtn" type="button">
+				  Checkout <span class="badge">@Session["nrOfItems"]</span>
+				</a>
+			}
+			else if (!Request.RawUrl.ToString().Contains("Checkout/PaymentComplete") && Session["shoppingCard"] != null) {
+				<a href = "/Checkout/Delete" class="btn btn-danger checkoutBtn" type="button">Delete Shopping Card</a>
+			}
 		</ul>
       </ul>
     </div>
