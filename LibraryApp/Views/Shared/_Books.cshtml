@@ -4,24 +4,21 @@
 			 <div id = 'book' class = 'thumbnail'>
     			<img src = '../Content/images/book_cover_2.png' class = "picture" />
 				<div class = 'caption'>
-				@using(Html.BeginForm("AddToCard", "Home", FormMethod.Post, new {bookTitle = @book.title, bookAuthor = @book.author}))
+				@using(Html.BeginForm("AddToCard", "Home", FormMethod.Post))
 				{
 					<center><h4>@book.title</h4></center>
 					<div class = "col-md-12 col-sm-12">
-						<div class = ""><h5>Author: @book.author</h5></div>
-					</div>
-					<div class = "col-md-12 col-sm-12">
-						<div class = ""><h5>Price: @book.price</h5></div>
-						<div class = ""><h5>In Stock: @book.inStock</h5></div>
+						<div class = ""><h5><b>Author:</b> @book.author</h5></div>
+						<div class = ""><h5><b>Price:</b> SEK @book.price</h5></div>
+						<div class = ""><h5><b>In Stock:</b> @book.inStock</h5></div>
 					</div>
 					<div class = "col-md-12 col-sm-12">
 						<button class = "btn btn-default">Add To Basket</button>
 					</div>
-
-					<input type = "hidden" name = "bookTitle"    value = @book.title>
-					<input type = "hidden" name = "bookAuthor"   value = @book.author>
-					<input type = "hidden" name = "bookprice"    value = @book.price>
-					<input type = "hidden" name = "bookinStock"  value = @book.inStock>
+					@Html.TextBox("bookTitle", (string)@book.title, new {@type = "hidden"})
+					@Html.TextBox("bookAuthor", (string)@book.author, new {@type = "hidden"})
+					@Html.TextBox("bookprice", (string)@book.price, new {@type = "hidden"})
+					@Html.TextBox("bookinStock", (int)@book.inStock, new {@type = "hidden"})
 				}
 				</div>
     		</div>
