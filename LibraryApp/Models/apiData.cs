@@ -10,15 +10,11 @@ namespace LibraryApp
 		 */
 		private const string API_URL = "http://www.contribe.se/arbetsprov-net/books.json";
 
-		public apiData() {
-			
-		}
-
 		/**
 		 * getBooksFromAPI - reads the data from the remote API
 		 * @return json - the books in json format
 		 */
-		public string getBooksFromAPI()
+		public static string getBooksFromAPI()
 		{
 			try {
 				var webClient = new WebClient();
