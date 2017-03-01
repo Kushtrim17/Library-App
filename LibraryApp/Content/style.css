@@ -10,3 +10,16 @@
 {
     margin-top: 10px;
 }
+.out_of_stock
+{
+	border: 2px solid red;
+}
+.outOfStockTxt
+{
+	color: red;
+}
+.pay_div
+{
+	border: 1px solid black;
+	padding-bottom: 10px;
+}
