@@ -11,10 +11,10 @@ namespace LibraryApp.Controllers
 {
 	public class HomeController : Controller
 	{
+
 		public ActionResult Index(string searchTerm = "")
 		{
-			var data = new apiData();
-			var jsonBooks = data.getBooksFromAPI();
+			var jsonBooks = apiData.getBooksFromAPI();
 			var books = JsonConvert.DeserializeObject<Books>(jsonBooks);
 
 			//if the search is empty then we dont filter
