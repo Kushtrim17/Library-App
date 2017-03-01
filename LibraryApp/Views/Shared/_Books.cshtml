@@ -1,10 +1,10 @@
 ﻿<div class="col-md-12 col-sm-12">
-	@if (Model.books.Count > 0) {
-		foreach(var book in Model.books){
-			<div class = "col-md-3 col-sm-12 card thumb">
-				 <div id = 'book' class = 'thumbnail'>
-	    			<img src = '../Content/images/book_cover_2.png' class = "picture" />
-					<div class = 'caption'>
+@if (Model.books.Count > 0) {
+	foreach(var book in Model.books) {
+		<div class = "col-md-3 col-sm-12 card thumb">
+			<div id = 'book' class = 'thumbnail'>
+				<img src = '../Content/images/book_cover_2.png' class = "picture" />
+				<div class = 'caption'>
 					@using(Html.BeginForm("AddToCard", "Home", FormMethod.Post))
 					{
 						<center><h4>@book.title</h4></center>
@@ -21,12 +21,12 @@
 						@Html.TextBox("bookprice", 	 (string)@book.price,  new {@type = "hidden"})
 						@Html.TextBox("bookinStock", (int)@book.inStock,   new {@type = "hidden"})
 					}
-					</div>
-	    		</div>
+				</div>
 			</div>
-		}
+		</div>
 	}
-	else {
-		<center><h1 class = "no_books_txt">NO BOOKS MATCH YOUR SEARCH</h1></center>
-	}
+}
+else {
+	<center><h1 class = "no_books_txt">NO BOOKS MATCH YOUR SEARCH</h1></center>
+}
 </div>
