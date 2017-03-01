@@ -1,10 +1,64 @@
-﻿@{
+﻿@model Kushtrim.Models.Books
+@{
     ViewBag.Title = "Checkout";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    double sum = 0;
+    bool hasOutOfStockItems = false;
 }
 
 <div class="container">
 	<div class = "row">
-		<center><h1>THIS IS SUPPOSED TO BE THE CHECKOUT PAGE </h1></center>
+		<center><h3>PAYMENT </h3></center>
+		<hr />
+		<div class = "col-md-12 col-sm-12">
+			<div class = "col-md-9 col-sm-12">
+				@foreach (var book in Model.books) {
+					string cssClass = "thumbnail ";
+					double bookPrice = Double.Parse(book.price) * book.amount;
+					sum += bookPrice;
+					if (book.inStock < book.amount) {
+						cssClass += "out_of_stock";
+						hasOutOfStockItems = true;
+					}
+					<div class = "col-md-4 col-sm-12 card thumb">
+				 		<div id = 'book' class = "@cssClass">
+	    					<img src = '../Content/images/book_cover_2.png' class = "picture" />
+							<div class = 'caption'></div>
+						@using(Html.BeginForm("RemoveItemFromCard", "Checkout", FormMethod.Post))
+						{
+							<center><h4>@book.title</h4></center>
+							<div class = "col-md-12 col-sm-12">
+								<div><h5><b>Author:</b> @book.author</h5></div>
+								<div><h5><b>Price:</b> SEK @book.price</h5></div>
+								<div><h5><b>In Stock:</b> @book.inStock</h5></div>
+								<div><h5><b>Quantity:</b> @book.amount</h5></div>
+							</div>
+							<div class = "col-md-12 col-sm-12">
+								<button class = "btn btn-danger">Remove From Basket</button>
+							</div>
+						
+							@Html.TextBox("bookTitle",  (string)@book.title,  new {@type = "hidden"})
+							@Html.TextBox("bookAuthor", (string)@book.author, new {@type = "hidden"})
+							@Html.TextBox("bookprice",  (string)@book.price,  new {@type = "hidden"})
+						}
+						</div>
+					</div>
+				}
+			</div>
+			<div class = "col-md-3 col-sm-12 pay_div">
+				<center><h4>PAY</h4></center>
+				<hr />
+				<h5><b>TOTAL PAYMENT</b> : SEK @sum</h5>
+				@{
+					var btnClass = "btn btn-success";
+					if (hasOutOfStockItems)  {
+						btnClass = "btn btn-success disabled";
+						<h5 class = "outOfStockTxt">Cannot complete Orders!</h5>
+						<h6 class = "outOfStockTxt">Remove items out of stocks</h6>
+					}
+				}
+				<a href = "/Checkout/PaymentComplete" class = "@btnClass">COMPLETE THE PAYMENT</a>
+			</div>
+		</div>
 	</div>
 </div>
