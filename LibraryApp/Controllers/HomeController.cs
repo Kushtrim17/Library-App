@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Mvc.Ajax;
@@ -14,8 +15,8 @@ namespace LibraryApp.Controllers
 
 		public ActionResult Index(string searchTerm = "")
 		{
-			var jsonBooks = apiData.getBooksFromAPI();
-			var books = JsonConvert.DeserializeObject<Books>(jsonBooks);
+			var json = BookstoreService.GetBooksAsync().Result;
+			var books = JsonConvert.DeserializeObject<Books>(json);
 
 			//if the search is empty then we dont filter
 			if (searchTerm.Length > 0) {
@@ -29,21 +30,16 @@ namespace LibraryApp.Controllers
 
 		public RedirectResult AddToCard(string bookTitle, string bookAuthor, string bookPrice, int bookinStock)
 		{
-			if (bookinStock > 0) {
-				Book book = new Book();
-				book.title = bookTitle;
-				book.author = bookAuthor;
-				book.price = bookPrice;
-				book.inStock = bookinStock;
+			//prepare the book object
+			Book book = new Book();
+			book.title = bookTitle;
+			book.author = bookAuthor;
+			book.price = bookPrice;
+			book.inStock = bookinStock;
 
-				SessionManager.Save<Book>(book);
+			SessionManager.Save<Book>(book);
 
-				return new RedirectResult("/Home/AddedToCard?title=" + bookTitle);
-			}
-			else {
-				return new RedirectResult("/Home/OutOfStock?title=" + bookTitle);
-			}
-
+			return new RedirectResult("/Home/AddedToCard?title=" + bookTitle);
 		}
 
 		public ActionResult OutOfStock()
