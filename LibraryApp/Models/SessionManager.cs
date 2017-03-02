@@ -5,6 +5,9 @@ using Kushtrim.Models;
 
 namespace LibraryApp
 {
+	/**
+	 *  SessionManager is a session wrapper
+	 */
 	public class SessionManager
 	{
 		/**
