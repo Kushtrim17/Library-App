@@ -1,3 +1,11 @@
+.action_btn
+{
+	width: 200px;
+}
+.added_to_card_txt
+{
+	opacity: 0.78;
+}
 #book
 {
 	height:360px;
