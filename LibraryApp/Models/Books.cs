@@ -31,11 +31,11 @@ namespace Kushtrim.Models
 		/**
 		 * removeBook - removes the given book from the book list
 		 * @param book|Book
+		 * @return i | int - returns the index at which the book was removed
 		 */
-		public void removeBook(string title, string author, double price)
+		public int removeBook(string title, string author, double price)
 		{
-			for (int i = books.Count - 1; i >= 0; i--)
-			{
+			for (int i = books.Count - 1; i >= 0; i--) {
 				if (books[i].title == title && books[i].author == author && Double.Parse(books[i].price) == price) {
 					if (books[i].amount > 1) {
 						//if the same book exists in more quantities in the shopping card
@@ -47,26 +47,34 @@ namespace Kushtrim.Models
 						//we delete it all
 						books.RemoveAt(i);
 					}
+
+					return i;
 				}
 			}
+
+			return -1;
 		}
 
 		/**
 		 * addBook
 		 * @param book | Book
+		 * @return amount | int
 		 */
-		public void addBookToCard(Book book)
+		public int addBookToCard(Book book)
 		{
 			int index = bookExistsInShoppingCard(book);
 			if (index == -1) {
 				//book doesnt exist in shopping card
 				book.amount = 1;
 				books.Add(book);
+				return 1;
 			}
 			else {
 				//book exists so update it's amount
 				books[index].amount += 1;
+				return books[index].amount;
 			}
+
 		}
 
 		/**
