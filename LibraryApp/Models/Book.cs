@@ -46,7 +46,17 @@ namespace Kushtrim.Models
 		 */
 		public bool isSelectedBook(string searchTerm)
 		{
-			if (author.ToLower().Contains(searchTerm.ToLower()) || title.ToLower().Contains(searchTerm.ToLower())) {
+			string sTerm = searchTerm.ToLower();
+			string aName = author.ToLower();
+			string bTitle = title.ToLower();
+			string aNameAndTitle = aName + " " + bTitle;
+			string bTitleaName = bTitle + " " + aName;
+
+			//the assignment specification says
+			//"As a user you should be able to search for books, the ..
+			//search will be on both the book title and/or author "
+			if (aName.Contains(sTerm) || bTitle.Contains(sTerm) || 
+			    aNameAndTitle.Contains(sTerm) || bTitleaName.Contains(sTerm)) {
 				return true;
 			}
 
