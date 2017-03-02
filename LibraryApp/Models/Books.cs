@@ -94,7 +94,7 @@ namespace Kushtrim.Models
 		private int bookExistsInShoppingCard(Book book)
 		{
 			for (var i = 0; i < getAllBooks().Count; i++) {
-				if (books[i].title == books[i].title && books[i].author == book.author && books[i].price == book.price) {
+				if (books[i].title == book.title && books[i].author == book.author && books[i].price == book.price) {
 					//we have to rely on the combination of title author and price to differenciate
 					//between books since they don't have an id 
 					return i;
