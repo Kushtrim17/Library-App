@@ -16,12 +16,6 @@ namespace LibraryApp
 			);
 
 			routes.MapRoute(
-				name: "Search",
-				url: "{controller}/{action}/{id}",
-				defaults: new { controller = "Home", action = "Search", id = UrlParameter.Optional }
-			);
-
-			routes.MapRoute(
 				name: "Checkout",
 				url: "{controller}/{action}/{id}",
 				defaults: new { controller = "Checkout", action = "Index", id = UrlParameter.Optional }
