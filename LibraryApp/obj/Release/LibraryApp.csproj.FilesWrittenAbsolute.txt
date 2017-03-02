@@ -1,0 +1,11 @@
+/Users/kushtrimabdiu/Projects/Library-App/LibraryApp/obj/Release/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/kushtrimabdiu/Projects/Library-App/LibraryApp/bin/LibraryApp.dll
+/Users/kushtrimabdiu/Projects/Library-App/LibraryApp/obj/Release/LibraryApp.dll
+/Users/kushtrimabdiu/Projects/Library-App/LibraryApp/bin/System.Web.Razor.dll
+/Users/kushtrimabdiu/Projects/Library-App/LibraryApp/bin/Microsoft.Web.Infrastructure.dll
+/Users/kushtrimabdiu/Projects/Library-App/LibraryApp/bin/System.Web.Helpers.dll
+/Users/kushtrimabdiu/Projects/Library-App/LibraryApp/bin/System.Web.WebPages.Deployment.dll
+/Users/kushtrimabdiu/Projects/Library-App/LibraryApp/bin/System.Web.WebPages.dll
+/Users/kushtrimabdiu/Projects/Library-App/LibraryApp/bin/System.Web.WebPages.Razor.dll
+/Users/kushtrimabdiu/Projects/Library-App/LibraryApp/bin/System.Web.Mvc.dll
+/Users/kushtrimabdiu/Projects/Library-App/LibraryApp/bin/Newtonsoft.Json.dll

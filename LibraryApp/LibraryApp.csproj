@@ -62,11 +62,13 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="System.Net.Http" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\" />
     <Folder Include="Models\" />
     <Folder Include="Scripts\" />
+    <Folder Include="Views\Checkout\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
@@ -76,7 +78,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Books.cs" />
-    <Compile Include="Models\apiData.cs" />
+    <Compile Include="Controllers\CheckoutController.cs" />
+    <Compile Include="Models\SessionManager.cs" />
+    <Compile Include="Models\BookstoreService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Web.config" />
@@ -90,6 +94,10 @@
     <Content Include="Views\Shared\_NavBar.cshtml" />
     <Content Include="Views\Shared\_Search.cshtml" />
     <Content Include="Views\Shared\_Books.cshtml" />
+    <Content Include="Views\Home\OutOfStock.cshtml" />
+    <Content Include="Views\Home\AddedToCard.cshtml" />
+    <Content Include="Views\Checkout\Index.cshtml" />
+    <Content Include="Views\Checkout\PaymentComplete.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
