@@ -53,9 +53,9 @@ namespace LibraryApp.Tests
 			books.addBookToCard(book2);
 
 			//Assert
-			Assert.AreEqual(books.removeBook(book1.title, book1.author, Double.Parse(book1.price)), 1, "Index should be 1 for book1 ");
-			//since the first element is removed then it is only one left so it should be 1 again
-			Assert.AreEqual(books.removeBook(book2.title, book2.author, Double.Parse(book2.price)), 1, "Index should be 1 for book2 ");
+			Assert.AreEqual(books.removeBook(book1.title, book1.author, Double.Parse(book1.price)), 0, "Index should be 1 for book1 ");
+			//since the first element is removed then it is only one left so it should be 0 again
+			Assert.AreEqual(books.removeBook(book2.title, book2.author, Double.Parse(book2.price)), 0, "Index should be 1 for book2 ");
 		}
 	}
 }
