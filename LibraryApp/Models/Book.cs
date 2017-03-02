@@ -15,28 +15,28 @@ namespace Kushtrim.Models
 		/**
 		 * the title
 		 */
-		public string title;
+		public string title { get; set; }
 
 		/**
 		 * the author
 		 */
-		public string author;
+		public string author { get; set; }
 
 		/**
 		 * the price of the given book
 		 */
-		public string price;
+		public string price { get; set; }
 
 		/**
 		 *  how many books we have in stock
 		 */
-		public int inStock;
+		public int inStock { get; set; }
 
 		/**
 		 * variable to control the amount of times
 		 * a book appears in the shopping list
 		 */
-		public int amount;
+		public int amount { get; set; }
 
 		/**
 		 * isSelectedBook - checks if the current book is part of the search
